@@ -26,12 +26,10 @@ $('#searchBtn').click(() => {
   $.ajax(settings)
     .done((response) => {
       let musik = response.data;
-      console.log(musik);
-
       $('#track-list').html('');
       $.each(musik, (i, data) => {
         $('#track-list').append(`
-          <div class="card m-3">
+          <div class="card m-3 col-md-3 col-sm-12">
             <img src="${data.album.cover_medium}" class="card-img-top" alt="..." />
             <div class="card-body">
               <h4 class="card-title">${data.title}</h4>
